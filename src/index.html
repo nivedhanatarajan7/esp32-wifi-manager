@@ -37,6 +37,7 @@
 					<h2>Manual Connection</span></h2>
 					<section>
 						<input id="manual_ssid" type="text" placeholder="SSID" value="">
+						<input id="manual_username" type="text" placeholder="Username" value="">
 						<input id="manual_pwd" type="password" placeholder="Password" value="">
 					</section>
 					<div class="buttons">
@@ -46,12 +47,20 @@
 				</div>
 				<div id="connect">
 					<header>
+						<h1>Enter Username</h1>
+					</header>
+					<h2>Password for <span id="ssid-username"></span></h2>
+					<section>
+						<input id="pwd" type="password" placeholder="Password" value="">
+					</section>
+					<header>
 						<h1>Enter Password</h1>
 					</header>
 					<h2>Password for <span id="ssid-pwd"></span></h2>
 					<section>
 						<input id="pwd" type="password" placeholder="Password" value="">
 					</section>
+					
 					<div class="buttons">
 							<input id="join" type="button" value="Join" />
 							<input id="cancel" type="button" value="Cancel"/>
