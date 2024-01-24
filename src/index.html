@@ -52,23 +52,27 @@
 					<div id="wpa2man">
 						<input id="manual_ssid" type="text" placeholder="SSID" value="">
 						<input id="manual_pwd" type="text" placeholder="Password" value="">
+						<div class="buttons">
+							<input id="manual_join" type="button" value="Join" data-connect="manualwpa" />
+							<input id="manual_cancel" type="button" value="Cancel"/>
+						</div>
 					</div>
 					<div id="eapman">
 						<input id="manual_ssid" type="text" placeholder="SSID" value="">
 						<input id="manual_username" type="text" placeholder="Username" value="">
 						<input id="manual_pwd" type="text" placeholder="Password" value="">
+						<div class="buttons">
+							<input id="manual_join" type="button" value="Join" data-connect="manualeap" />
+							<input id="manual_cancel" type="button" value="Cancel"/>
+						</div>
 					</div>
-					<div class="buttons">
-						<input id="manual_join" type="button" value="Join" data-connect="manual" />
-						<input id="manual_cancel" type="button" value="Cancel"/>
-				</div>
 				</div>
 
 				
 				<div id="connect">
 					<div class="selection">
 						<p>Select WiFi Connection</p>
-						<button id="wpa2button" onclick="showForm('wpa2')">WPA2</button>
+						<button id="wpa2button" onclick="showForm('wpa2')">WPA/2/3/...</button>
 						<button id="eapbutton" onclick="showForm('eap')">EAP</button>
 					</div>
 
@@ -78,6 +82,8 @@
 							<input id="pwd" type="text" placeholder="Password" value="">
 						</section>
 					</div>
+
+					
 					<div id="eap">
 						<h2>Username</span></h2>
 						<section>
@@ -92,7 +98,7 @@
 					<div class="buttons">
 						<input id="join" type="button" value="Join" />
 						<input id="cancel" type="button" value="Cancel"/>
-				</div>
+					</div>
 				</div>
 				<div id="connect-wait">
 					<header>
