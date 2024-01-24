@@ -9,6 +9,15 @@
 		<title>esp32-wifi-manager</title>
 	</head>
 	<body>
+		<script>
+			function showForm(formType) {
+				document.getElementById('wpa2').style.display = 'none';
+				document.getElementById('eap').style.display = 'none';
+				document.getElementById('wpa2man').style.display = 'none';
+				document.getElementById('eapman').style.display = 'none';
+				document.getElementById(formType).style.display = 'block';
+			}
+		</script>
 		<div id="app">
 			<div id="app-wrap">
 				<div id="wifi">
@@ -35,36 +44,55 @@
 						<h1>Enter Details</h1>
 					</header>
 					<h2>Manual Connection</span></h2>
-					<section>
+					<div class="selection">
+						<p>Select WiFi Connection</p>
+						<button id="wpa2button" onclick="showForm('wpa2man')">WPA2</button>
+						<button id="eapbutton" onclick="showForm('eapman')">EAP</button>
+					</div>
+					<div id="wpa2man">
+						<input id="manual_ssid" type="text" placeholder="SSID" value="">
+						<input id="manual_pwd" type="text" placeholder="Password" value="">
+					</div>
+					<div id="eapman">
 						<input id="manual_ssid" type="text" placeholder="SSID" value="">
 						<input id="manual_username" type="text" placeholder="Username" value="">
-						<input id="manual_pwd" type="password" placeholder="Password" value="">
-					</section>
-					<div class="buttons">
-							<input id="manual_join" type="button" value="Join" data-connect="manual" />
-							<input id="manual_cancel" type="button" value="Cancel"/>
+						<input id="manual_pwd" type="text" placeholder="Password" value="">
 					</div>
+					<div class="buttons">
+						<input id="manual_join" type="button" value="Join" data-connect="manual" />
+						<input id="manual_cancel" type="button" value="Cancel"/>
 				</div>
+				</div>
+
+				
 				<div id="connect">
-					<header>
-						<h1>Enter Username</h1>
-					</header>
-					<h2>Password for <span id="ssid-username"></span></h2>
-					<section>
-						<input id="pwd" type="password" placeholder="Password" value="">
-					</section>
-					<header>
-						<h1>Enter Password</h1>
-					</header>
-					<h2>Password for <span id="ssid-pwd"></span></h2>
-					<section>
-						<input id="pwd" type="password" placeholder="Password" value="">
-					</section>
-					
-					<div class="buttons">
-							<input id="join" type="button" value="Join" />
-							<input id="cancel" type="button" value="Cancel"/>
+					<div class="selection">
+						<p>Select WiFi Connection</p>
+						<button id="wpa2button" onclick="showForm('wpa2')">WPA2</button>
+						<button id="eapbutton" onclick="showForm('eap')">EAP</button>
 					</div>
+
+					<div id="wpa2">
+						<h2>Password for <span id="ssid-pwd"></span></h2>
+						<section>
+							<input id="pwd" type="text" placeholder="Password" value="">
+						</section>
+					</div>
+					<div id="eap">
+						<h2>Username</span></h2>
+						<section>
+							<input id="username" type="text" placeholder="Username" value="">
+						</section>
+						<h2>Password</span></h2>
+						<section>
+							<input id="pwd" type="text" placeholder="Password" value="">
+						</section>
+						
+					</div>
+					<div class="buttons">
+						<input id="join" type="button" value="Join" />
+						<input id="cancel" type="button" value="Cancel"/>
+				</div>
 				</div>
 				<div id="connect-wait">
 					<header>
