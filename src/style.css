@@ -16,6 +16,17 @@ input {
     display: none;
     font: 1.1em tahoma, arial, sans-serif;
 }
+button {
+    font-size: 18px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.selection {
+    margin: auto;
+    text-align: center;
+}
 input:focus,
 select:focus,
 textarea:focus,
@@ -120,18 +131,38 @@ h3 {
 }
 #manual_ssid {
     border: none;
-    width: 80%;
-    margin-left: 35px;
+    width: 100%;
     padding: 10px 0px 10px 10px;
     display: block
 }
+#manual_username {
+    border: none;
+    width: 100%;
+    padding: 10px 0px 10px 10px;
+    display: block
+}
+
 #manual_pwd {
     border: none;
-    width: 80%;
-    margin-left: 35px;
+    width: 100%;
     padding: 10px 0px 10px 10px;
     display: block
 }
+#wpa2 {
+    display: none;
+}
+
+#eap {
+    display: none;
+}
+#wpa2man {
+    display: none;
+}
+
+#eapman {
+    display: none;
+}
+
 #pwd {
     border: none;
     width: 80%;
@@ -139,6 +170,15 @@ h3 {
     padding: 10px 0px 10px 10px;
     display: block
 }
+
+#username {
+    border: none;
+    width: 80%;
+    margin-left: 35px;
+    padding: 10px 0px 10px 10px;
+    display: block
+}
+
 .buttons {
     padding: 15px;
 }
