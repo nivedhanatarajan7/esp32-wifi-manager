@@ -148,9 +148,6 @@ h3 {
     padding: 10px 0px 10px 10px;
     display: block
 }
-#wpa2 {
-    display: none;
-}
 
 #eap {
     display: none;
@@ -181,6 +178,8 @@ h3 {
 
 .buttons {
     padding: 15px;
+    display: flex;
+    justify-content: space-evenly;
 }
 #join {
     float: right;
@@ -200,6 +199,7 @@ h3 {
 }
 .tctr {
     text-align: center;
+
 }
 #connect-wait {
     display: none;
