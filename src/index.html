@@ -53,7 +53,7 @@
 						<input id="manual_ssid" type="text" placeholder="SSID" value="">
 						<input id="manual_pwd" type="text" placeholder="Password" value="">
 						<div class="buttons">
-							<input id="manual_join" type="button" value="Join" data-connect="manualwpa" />
+							<input id="manual_join_wpa" type="button" value="Join" data-connect="manualwpa" />
 							<input id="manual_cancel" type="button" value="Cancel"/>
 						</div>
 					</div>
@@ -62,7 +62,7 @@
 						<input id="manual_username" type="text" placeholder="Username" value="">
 						<input id="manual_pwd" type="text" placeholder="Password" value="">
 						<div class="buttons">
-							<input id="manual_join" type="button" value="Join" data-connect="manualeap" />
+							<input id="manual_join_eap" type="button" value="Join" data-connect="manualeap" />
 							<input id="manual_cancel" type="button" value="Cancel"/>
 						</div>
 					</div>
@@ -81,6 +81,10 @@
 						<section>
 							<input id="pwd" type="text" placeholder="Password" value="">
 						</section>
+						<div class="buttons">
+							<input id="join_wpa" type="button" value="Join" />
+							<input id="cancel" type="button" value="Cancel"/>
+						</div>
 					</div>
 
 					
@@ -93,11 +97,10 @@
 						<section>
 							<input id="pwd" type="text" placeholder="Password" value="">
 						</section>
-						
-					</div>
-					<div class="buttons">
-						<input id="join" type="button" value="Join" />
-						<input id="cancel" type="button" value="Cancel"/>
+						<div class="buttons">
+							<input id="join_eap" type="button" value="Join" />
+							<input id="cancel" type="button" value="Cancel"/>
+						</div>
 					</div>
 				</div>
 				<div id="connect-wait">
