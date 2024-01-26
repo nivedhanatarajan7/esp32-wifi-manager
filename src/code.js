@@ -94,13 +94,35 @@ docReady(async function () {
   gel("cancel").addEventListener("click", cancel, false);
 
   gel("manual_cancel").addEventListener("click", cancel, false);
-
-  gel("join").addEventListener("click", performConnect, false);
-
-  gel("manual_join").addEventListener(
+  
+  gel("manual_join_wpa").addEventListener(
     "click",
     (e) => {
-      performConnect("manual");
+      performConnect("manualwpa");
+    },
+    false
+  );
+
+  gel("manual_join_eap").addEventListener(
+    "click",
+    (e) => {
+      performConnect("manualeap");
+    },
+    false
+  );
+
+  gel("join_wpa").addEventListener(
+    "click",
+    (e) => {
+      performConnect("wpa");
+    },
+    false
+  );
+
+  gel("join_eap").addEventListener(
+    "click",
+    (e) => {
+      performConnect("eap");
     },
     false
   );
@@ -196,14 +218,25 @@ async function performConnect(conntype) {
   //stop refreshing wifi list
   stopRefreshAPInterval();
 
-  var pwd;
-  if (conntype == "manual") {
-    //Grab the manual SSID and PWD
-    selectedSSID = gel("manual_ssid").value;
-    pwd = gel("manual_pwd").value;
-  } else {
-    pwd = gel("pwd").value;
-  }
+    var pwd;
+    var username;
+    if (conntype === "manualwpa") {
+      selectedSSID = gel("manual_wpa_ssid").value;
+      pwd = gel("manual_wpa_pwd").value;
+    } else if (conntype === "manualeap") {
+      selectedSSID = gel("manual_eap_ssid").value;
+      pwd = gel("manual_eap_pwd").value;
+      username = gel("manual_eap_username").value;
+    }else {
+      if (conntype === "wpa") {
+        pwd = gel("wpa_pwd").value;
+      } else {
+        pwd = gel("eap_pwd").value;
+        username = gel("eap_username").value;
+      }
+    }
+  
+  
   //reset connection
   gel("loading").style.display = "block";
   gel("connect-success").style.display = "none";
@@ -220,6 +253,7 @@ async function performConnect(conntype) {
     headers: {
       "Content-Type": "application/json",
       "X-Custom-ssid": selectedSSID,
+      "X-Custom-username": username,
       "X-Custom-pwd": pwd,
     },
     body: { timestamp: Date.now() },
